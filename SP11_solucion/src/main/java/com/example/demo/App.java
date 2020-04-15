@@ -6,13 +6,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.transaction.Transactional;
+import java.io.IOException;
 import java.util.List;
 
 @SpringBootApplication
 public class App{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         SpringApplication.run(App.class, args);
+        RecolectoDatos r = new RecolectoDatos();
+        r.RecolectoHospital("C:\\Users\\d.hernandezp.2016\\IdeaProjects\\Practica3Buena\\SP11_solucion\\src\\main\\resources\\csv\\H2.csv");
+
     }
 
  /*   *//* Redefinición de método para ejecutar acciones sobre la BD. *//*

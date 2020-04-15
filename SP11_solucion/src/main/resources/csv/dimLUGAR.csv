@@ -1,0 +1,11 @@
+id;nombre;cpostal;autopista;gestor
+H1;HospitalGeneral;82043;A5;Comunidad
+H2;ClinicAvicena;82345;A5;HP S.A.
+H3;HospitalPasteur;82007;A4;Comunidad
+H4;HospitalOlmos;82933;A3;Comunidad
+H5;ClinicaAbril;82311;A1;GH S.L.
+H6;ClinicaDescalzas;82003;A4;ManHos S.A.
+H7;ClinicaCarmen;82032;A6;ManHos S.A.
+H8;SanatorioCirculoAzul;82505;A2;GH S.L.
+H9;SanatorioHuangDi;82100;A3;HP S.A.
+H10;CentroSaludRoma;82190;A2;Comunidad
