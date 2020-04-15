@@ -16,7 +16,7 @@ public interface RepositoryTiempo extends CrudRepository<dimTIEMPO, Integer> {
     List<dimTIEMPO> findByMes (int mes);
     List<dimTIEMPO> findByAnio (int anio);
     List<dimTIEMPO> findByCuatrim (int cuatrim);
-    List<dimTIEMPO> findByDiasem(String diasem);
+    List<dimTIEMPO> findByDiasemana(String diasemana);
     List<dimTIEMPO> findByEsfinde (boolean esfinde);
 
 }

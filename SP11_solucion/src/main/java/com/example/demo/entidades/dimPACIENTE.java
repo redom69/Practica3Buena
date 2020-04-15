@@ -16,7 +16,7 @@ public class dimPACIENTE {
     @Column
     private boolean sexo;
     @Column
-    private int IMC;
+    private int imc;
     @Column
     private int formaFisica;
     @Column
@@ -32,7 +32,7 @@ public class dimPACIENTE {
     @Column
     private boolean reuma;
     @Column
-    private boolean EPOC;
+    private boolean epoc;
     @Column
     private int hepatitis;
     @Column
@@ -41,11 +41,11 @@ public class dimPACIENTE {
     public dimPACIENTE() {
     }
 
-    public dimPACIENTE(int id, int edad, boolean sexo, int IMC, int formaFisica, boolean tabaquismo, boolean alcoholismo, boolean colesterol, boolean hipertension, boolean cardiopatia, boolean reuma, boolean EPOC, int hepatitis, boolean cancer) {
+    public dimPACIENTE(int id, int edad, boolean sexo, int imc, int formaFisica, boolean tabaquismo, boolean alcoholismo, boolean colesterol, boolean hipertension, boolean cardiopatia, boolean reuma, boolean epoc, int hepatitis, boolean cancer) {
         this.id = id;
         this.edad = edad;
         this.sexo = sexo;
-        this.IMC = IMC;
+        this.imc = imc;
         this.formaFisica = formaFisica;
         this.tabaquismo = tabaquismo;
         this.alcoholismo = alcoholismo;
@@ -53,17 +53,17 @@ public class dimPACIENTE {
         this.hipertension = hipertension;
         this.cardiopatia = cardiopatia;
         this.reuma = reuma;
-        this.EPOC = EPOC;
+        this.epoc = epoc;
         this.hepatitis = hepatitis;
         this.cancer = cancer;
     }
 
-    public int getIMC() {
-        return IMC;
+    public int getimc() {
+        return imc;
     }
 
-    public void setIMC(int IMC) {
-        this.IMC = IMC;
+    public void setimc(int imc) {
+        this.imc = imc;
     }
 
     @Id
@@ -148,12 +148,12 @@ public class dimPACIENTE {
         this.reuma = reuma;
     }
 
-    public boolean isEPOC() {
-        return EPOC;
+    public boolean isepoc() {
+        return epoc;
     }
 
-    public void setEPOC(boolean EPOC) {
-        this.EPOC = EPOC;
+    public void setepoc(boolean epoc) {
+        this.epoc = epoc;
     }
 
     public int getHepatitis() {
@@ -188,7 +188,7 @@ public class dimPACIENTE {
                 ", id=" + id +
                 ", edad=" + edad +
                 ", sexo=" + sexo +
-                ", IMC=" + IMC +
+                ", imc=" + imc +
                 ", formaFisica=" + formaFisica +
                 ", tabaquismo=" + tabaquismo +
                 ", alcoholismo=" + alcoholismo +
@@ -196,7 +196,7 @@ public class dimPACIENTE {
                 ", hipertension=" + hipertension +
                 ", cardiopatia=" + cardiopatia +
                 ", reuma=" + reuma +
-                ", EPOC=" + EPOC +
+                ", epoc=" + epoc +
                 ", hepatitis=" + hepatitis +
                 ", cancer=" + cancer +
                 '}';
