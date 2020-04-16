@@ -17,7 +17,7 @@ public class tablaHECHOS {
     @Column
     private int Duracion;
     @Column
-    private String UCI;
+    private String uci;
     @Column
     private String Fallecido;
     @Column
@@ -26,13 +26,13 @@ public class tablaHECHOS {
     public tablaHECHOS() {
     }
 
-    public tablaHECHOS(int id, dimPACIENTE cliente_id, dimHOSPITAL hospital_id, dimTIEMPO fechaIngreso_id, int Duracion, String UCI, String Fallecido, int Tratamiento) {
+    public tablaHECHOS(int id, dimPACIENTE cliente_id, dimHOSPITAL hospital_id, dimTIEMPO fechaIngreso_id, int Duracion, String uci, String Fallecido, int Tratamiento) {
         this.id = id;
         this.cliente_id = cliente_id;
         this.hospital_id = hospital_id;
         this.fechaIngreso_id = fechaIngreso_id;
         this.Duracion = Duracion;
-        this.UCI = UCI;
+        this.uci = uci;
         this.Fallecido = Fallecido;
         this.Tratamiento = Tratamiento;
     }
@@ -85,12 +85,12 @@ public class tablaHECHOS {
         this.Duracion = Duracion;
     }
 
-    public String getUCI() {
-        return UCI;
+    public String getuci() {
+        return uci;
     }
 
-    public void setUCI(String UCI) {
-        this.UCI = UCI;
+    public void setuci(String uci) {
+        this.uci = uci;
     }
 
     public String getFallecido() {
@@ -117,7 +117,7 @@ public class tablaHECHOS {
                 ", hospital_id=" + hospital_id +
                 ", fechaIngreso_id=" + fechaIngreso_id +
                 ", Duracion=" + Duracion +
-                ", UCI='" + UCI + '\'' +
+                ", uci='" + uci + '\'' +
                 ", Fallecido='" + Fallecido + '\'' +
                 ", Tratamiento=" + Tratamiento +
                 '}';

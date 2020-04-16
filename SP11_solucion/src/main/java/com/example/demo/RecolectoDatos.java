@@ -3,9 +3,14 @@ package com.example.demo;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
+import com.example.demo.servicios.*;
+
 
 public class RecolectoDatos {
+
+    private serviciosLugar servicioH;
+    private serviciosTiempo servicioT;
+    private serviciosPaciente servicioP;
 
     public RecolectoDatos() {
     }
@@ -48,6 +53,10 @@ public class RecolectoDatos {
         if(bufferedLectura != null){
             bufferedLectura.close();
         }
+    }
+
+    public void inicializarTablas(){
+
     }
 }
 
