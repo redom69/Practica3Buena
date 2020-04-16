@@ -11,7 +11,7 @@ public class tablaHECHOS {
     @Column
     private dimPACIENTE cliente_id;
     @Column
-    private dimHOSPITAL hospital_id;
+    private dimLUGAR hospital_id;
     @Column
     private dimTIEMPO fechaIngreso_id;
     @Column
@@ -26,7 +26,7 @@ public class tablaHECHOS {
     public tablaHECHOS() {
     }
 
-    public tablaHECHOS(int id, dimPACIENTE cliente_id, dimHOSPITAL hospital_id, dimTIEMPO fechaIngreso_id, int Duracion, String uci, String Fallecido, int Tratamiento) {
+    public tablaHECHOS(int id, dimPACIENTE cliente_id, dimLUGAR hospital_id, dimTIEMPO fechaIngreso_id, int Duracion, String uci, String Fallecido, int Tratamiento) {
         this.id = id;
         this.cliente_id = cliente_id;
         this.hospital_id = hospital_id;
@@ -59,11 +59,11 @@ public class tablaHECHOS {
 
     @ManyToOne
     @JoinColumn(name = "hospital_id")
-    public dimHOSPITAL getHospital_id() {
+    public dimLUGAR getHospital_id() {
         return hospital_id;
     }
 
-    public void setHospital_id(dimHOSPITAL hospital_id) {
+    public void setHospital_id(dimLUGAR hospital_id) {
         this.hospital_id = hospital_id;
     }
 

@@ -15,7 +15,7 @@ public class App{
     public static void main(String[] args) throws IOException {
         SpringApplication.run(App.class, args);
         RecolectoDatos r = new RecolectoDatos();
-        r.RecolectoHospital("C:\\Users\\d.hernandezp.2016\\IdeaProjects\\Practica3Buena\\SP11_solucion\\src\\main\\resources\\csv\\H2.csv");
+        r.inicializarTablas();
 
     }
 
