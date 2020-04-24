@@ -2,11 +2,12 @@ package com.example.demo.repositorios;
 
 import com.example.demo.entidades.dimPACIENTE;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@RepositoryRestResource
 public interface RepositoryPaciente extends CrudRepository<dimPACIENTE, Integer> {
 
     List<dimPACIENTE> findById (int id);
