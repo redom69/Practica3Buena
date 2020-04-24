@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import com.example.demo.entidades.dimLUGAR;
 import com.example.demo.entidades.dimPACIENTE;
@@ -35,7 +36,7 @@ public class RecolectoDatos {
         dimTIEMPO tiempo = new dimTIEMPO();
         dimLUGAR lugar = new dimLUGAR();
         int contador = 1;
-        while(linea1 != null){
+        while((linea1 != null)&&(linea2 != null)){
             String[] campos = linea1.split(String.valueOf(";"));
 
             hospital.setId(Integer.parseInt(campos[0]));
@@ -60,17 +61,15 @@ public class RecolectoDatos {
             paciente.setepoc(Boolean.parseBoolean(campos2[11]));
             paciente.setHepatitis(Integer.parseInt(campos2[12]));
             paciente.setCancer(Boolean.parseBoolean(campos2[13]));
-
             hospital.setCliente_id(paciente);
 
             tiempo = RecolectoTiempo(ruta3, campos[2]);
-
             hospital.setFechaIngreso_id(tiempo);
+            System.out.println(tiempo.toString());
 
             lugar = RecolectoLugar(ruta4, contador);
             hospital.setHospital_id(lugar);
             contador++;
-
 
             linea1 = bufferedLectura1.readLine();
             linea2 = bufferedLectura2.readLine();
@@ -81,10 +80,11 @@ public class RecolectoDatos {
         if(bufferedLectura2 != null){
             bufferedLectura2.close();
         }
-        servicioH.guardarHospital(hospital);
-        servicioL.guardarLugar(lugar);
+/*        servicioL.guardarLugar(lugar);
         servicioP.guardarPaciente(paciente);
-        servicioT.guardarTiempos(tiempo);
+        servicioT.guardarTiempos(tiempo);*/
+        servicioH.guardarHospital(hospital);
+
     }
 
     public void RecolectoPaciente(String ruta) throws IOException {
@@ -108,6 +108,7 @@ public class RecolectoDatos {
             paciente.setHepatitis(Integer.parseInt(campos[12]));
             paciente.setCancer(Boolean.parseBoolean(campos[13]));
             linea = bufferedLectura.readLine();
+            servicioP.guardarPaciente(paciente);
         }
         if(bufferedLectura != null){
             bufferedLectura.close();
@@ -119,22 +120,20 @@ public class RecolectoDatos {
         String linea = bufferedLectura.readLine();
         linea = bufferedLectura.readLine();
         dimTIEMPO tiempo = new dimTIEMPO();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         while(linea != null){
             String[] campos = linea.split(String.valueOf(";"));
             if (date.equals(campos[1])) {
+                String[] fechas = campos[1].split(String.valueOf("/"));
+                Date fecha = new Date((Integer.parseInt(fechas[2])-1900),Integer.parseInt(fechas[1]),Integer.parseInt(fechas[0]));
                 tiempo.setId(Integer.parseInt(campos[0]));
-                try {
-                    tiempo.setFecha(formatter.parse(campos[1]));
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
+                tiempo.setFecha(fecha);
                 tiempo.setDia(Integer.parseInt(campos[2]));
                 tiempo.setMes(Integer.parseInt(campos[3]));
                 tiempo.setAnio(Integer.parseInt(campos[4]));
                 tiempo.setCuatrim(Integer.parseInt(campos[5]));
                 tiempo.setDiasemana(campos[6]);
                 tiempo.setEsfinde(Boolean.parseBoolean(campos[7]));
+
                 return tiempo;
             }
             linea = bufferedLectura.readLine();
@@ -153,7 +152,6 @@ public class RecolectoDatos {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         int contador2 = 1;
         while(linea != null) {
-            System.out.println(linea);
             if (contador == contador2) {
                 String[] campos = linea.split(String.valueOf(";"));
                 lugar.setId(campos[0]);
@@ -173,10 +171,10 @@ public class RecolectoDatos {
     }
 
     public void inicializarTablas() throws IOException {
-        String ruta1 = "src/main/resources/csv/H1.csv";
-        String ruta2 = "src/main/resources/csv/P1.csv";
-        String ruta3 = "src/main/resources/csv/dimTIEMPO.csv";
-        String ruta4 = "src/main/resources/csv/dimLUGAR.csv";
+        String ruta1 = "C:\\Users\\d.hernandezp.2016\\IdeaProjects\\Practica3Buena\\SP11_solucion\\src\\main\\resources\\csv\\H1.csv";
+        String ruta2 = "C:\\Users\\d.hernandezp.2016\\IdeaProjects\\Practica3Buena\\SP11_solucion\\src\\main\\resources\\csv\\P1.csv";
+        String ruta3 = "C:\\Users\\d.hernandezp.2016\\IdeaProjects\\Practica3Buena\\SP11_solucion\\src\\main\\resources\\csv\\dimTIEMPO.csv";
+        String ruta4 = "C:\\Users\\d.hernandezp.2016\\IdeaProjects\\Practica3Buena\\SP11_solucion\\src\\main\\resources\\csv\\dimLUGAR.csv";
         RecolectoHospital(ruta1, ruta2, ruta3, ruta4);
     }
 }

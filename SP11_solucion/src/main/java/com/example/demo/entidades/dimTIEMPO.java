@@ -114,4 +114,19 @@ public class dimTIEMPO {
     public void setEsfinde(boolean esfinde) {
         this.esfinde = esfinde;
     }
+
+    @Override
+    public String toString() {
+        return "dimTIEMPO{" +
+                "hechos=" + hechos +
+                ", id=" + id +
+                ", fecha=" + fecha +
+                ", dia=" + dia +
+                ", mes=" + mes +
+                ", anio=" + anio +
+                ", cuatrim=" + cuatrim +
+                ", diasemana='" + diasemana + '\'' +
+                ", esfinde=" + esfinde +
+                '}';
+    }
 }
