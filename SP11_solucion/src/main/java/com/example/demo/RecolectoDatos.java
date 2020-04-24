@@ -80,9 +80,9 @@ public class RecolectoDatos {
         if(bufferedLectura2 != null){
             bufferedLectura2.close();
         }
-/*        servicioL.guardarLugar(lugar);
+        servicioL.guardarLugar(lugar);
         servicioP.guardarPaciente(paciente);
-        servicioT.guardarTiempos(tiempo);*/
+        servicioT.guardarTiempos(tiempo);
         servicioH.guardarHospital(hospital);
 
     }
